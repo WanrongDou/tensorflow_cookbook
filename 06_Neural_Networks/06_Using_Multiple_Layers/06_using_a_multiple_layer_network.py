@@ -125,18 +125,18 @@ def fully_connected(input_layer, weights, biases):
     layer = tf.add(tf.matmul(input_layer, weights), biases)
     return tf.nn.relu(layer)
 
-# -------Create the first layer (50 hidden nodes)--------
+# -------Create the first layer (25 hidden nodes)--------
 weight_1 = init_weight(shape=[7, 25], st_dev=10.0)
 bias_1 = init_bias(shape=[25], st_dev=10.0)
 layer_1 = fully_connected(x_data, weight_1, bias_1)
 
-# -------Create second layer (25 hidden nodes)--------
+# -------Create second layer (10 hidden nodes)--------
 weight_2 = init_weight(shape=[25, 10], st_dev=10.0)
 bias_2 = init_bias(shape=[10], st_dev=10.0)
 layer_2 = fully_connected(layer_1, weight_2, bias_2)
 
 
-# -------Create third layer (5 hidden nodes)--------
+# -------Create third layer (3 hidden nodes)--------
 weight_3 = init_weight(shape=[10, 3], st_dev=10.0)
 bias_3 = init_bias(shape=[3], st_dev=10.0)
 layer_3 = fully_connected(layer_2, weight_3, bias_3)
